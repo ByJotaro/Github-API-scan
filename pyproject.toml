@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "secret-scanner-pro"
+version = "2.3.0"
+description = "Multi-source API key discovery, validation and local OpenAI-compatible proxy (Textual TUI)"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+  "PyGithub>=2.1.1",
+  "aiohttp[speedups]>=3.9.0",
+  "rich>=13.7.0",
+  "textual>=0.47.0",
+  "loguru>=0.7.2",
+  "aiosqlite>=0.19.0",
+  "PyYAML>=6.0.0",
+  "cryptography>=41.0.0",
+  "pyperclip>=1.8.0",
+]
+
+[project.optional-dependencies]
+win = ["pywin32>=300; sys_platform == 'win32'"]
+
+[project.scripts]
+ascan = "ascan:main"
+
+[tool.setuptools]
+py-modules = ["ascan"]

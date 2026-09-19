@@ -1,0 +1,97 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+.venv/
+ENV/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.claude/
+
+# Database
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+*.err
+logs/
+
+# Scratch / one-off helpers (never commit)
+_*.py
+_*.ps1
+Github-API-scan.zip
+exported_keys.*
+config_local.py.backup
+config_local.*.backup
+notify_config.yaml
+.pytest_cache/
+*.db-journal
+*.sqlite-journal
+*.sqlite-shm
+*.sqlite-wal
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Local configuration (contains sensitive tokens)
+config_local.py
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+leaked_keys.db
+valid_keys.txt
+found_keys.txt
+
+# --- public export harden ---
+config_local.py
+*.db
+*.db-shm
+*.db-wal
+_*.py
+*.log
+*.err
+*.zip
+exported_keys.*
+valid_keys.txt
+found_keys.txt
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/

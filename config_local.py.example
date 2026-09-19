@@ -1,0 +1,58 @@
+# GitHub Secret Scanner Pro — local secrets (DO NOT COMMIT)
+# Copy this file to:  config_local.py
+# Full path (example):
+#   C:\Users\jotaro\Github-API-scan\config_local.py
+#
+# RU: скопируйте в config_local.py рядом с tui_app.py / config.py
+# Файл в .gitignore — реальные токены в git не попадают.
+
+"""
+How to get a token / Как получить токен
+---------------------------------------
+1. Open https://github.com/settings/tokens
+2. Generate new token (classic)
+3. Scope: public_repo  (enough for code/gist search on public data)
+4. Paste ghp_... strings below
+
+Or set environment variable (comma-separated):
+  Windows:  setx GITHUB_TOKENS "ghp_xxx,ghp_yyy"
+  Linux:    export GITHUB_TOKENS="ghp_xxx,ghp_yyy"
+"""
+
+# Required for full GitHub Code Search + authenticated Gist throughput.
+# Without working tokens, GitHub-backed sources degrade (public-only / 401).
+GITHUB_TOKENS = [
+    "ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    # "ghp_yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+]
+
+# Optional HTTP proxy for outbound requests
+PROXY_URL = ""  # e.g. "http://127.0.0.1:7890"
+
+# SQLite database path (relative to project root or absolute)
+DB_PATH = "leaked_keys.db"
+
+# Validator worker threads
+CONSUMER_THREADS = 20
+
+# HTTP timeout (seconds)
+REQUEST_TIMEOUT = 15
+
+# Pastebin developer key (optional — keyless archive mode works without it,
+# Scraping API needs Pro + whitelisted IP; improves Pastebin source rate)
+# PASTEBIN_API_KEY = ""
+
+# ngrok: free static domain for public access to local proxy
+# (OmniRouter etc. block localhost). Register: ngrok.com/signup,
+# Dashboard → Domains → New Domain (free, *.ngrok-free.app, forever).
+# Once in console: ngrok config add-authtoken YOUR_TOKEN
+# NGROK_DOMAIN = ""  # e.g. "magical-unicorns-42.ngrok-free.app"
+
+# Local OpenAI-compatible proxy selection mode: round_robin | sticky
+# SELECTION_MODE = "round_robin"
+
+# Proxy bind mode for TUI: local | external
+# PROXY_MODE = "local"
+
+# TUI language: auto | en | ru
+# UI_LANG = "auto"
